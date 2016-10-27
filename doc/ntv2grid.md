@@ -32,21 +32,21 @@ PostGIS
 -------
 
 Deze waardes worden in ieder geval gebruikt door PostGIS 2.3.0 (in
-Debian testing/unstable) in diens spatial_ref_sys.sql:
+Debian testing/unstable) in diens [spatial_ref_sys.sql](https://trac.osgeo.org/postgis/browser/tags/2.3.0/spatial_ref_sys.sql):
 ```
- TOWGS84[565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725]
+TOWGS84[565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725]
 ```
 Ook PostGIS 2.2.2 (in Ubuntu yakkety) gebruikt deze waardes.
 
 PostGIS 2.2.1 (in Ubuntu xenial) gebruikt deze waardes ook, maar heeft
 een hogere precisie:
 ```
- TOWGS84[565.4171,50.3319,465.5524,-0.398957388243134,0.343987817378283,-1.87740163998045,4.0725]
+TOWGS84[565.4171,50.3319,465.5524,-0.398957388243134,0.343987817378283,-1.87740163998045,4.0725]
 ```
 PostGIS 2.1.8 (in Ubuntu wily) hebben een aantal waardes een lagere
 precisie:
 ```
- TOWGS84[565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725]
+TOWGS84[565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725]
 ```
 Zo ook in PostGIS 2.1.4 (in Debian jessie), en PostGIS 2.1.2 (in Ubuntu
 trusty).
@@ -56,17 +56,17 @@ PROJ.4
 ------
 
 PROJ.4 4.9.3 (in Debian testing/unstable) gebruikt dezelfde waardes als
-PostGIS 2.3.0 in diens nad/epsg:
+PostGIS 2.3.0 in diens [nad/epsg](https://github.com/OSGeo/proj.4/blob/4.9.3/nad/epsg):
 
 ```
- +towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725
++towgs84=565.4171,50.3319,465.5524,-0.398957,0.343988,-1.87740,4.0725
 ```
 
 PROJ.4 4.9.2 (in Ubuntu xenial & yakkety) gebruikt dezelfde waardes als
 PostGIS 2.2.2 met de hogere precisie:
 
 ```
- +towgs84=565.4171,50.3319,465.5524,-0.398957388243134,0.343987817378283,-1.87740163998045,4.0725
++towgs84=565.4171,50.3319,465.5524,-0.398957388243134,0.343987817378283,-1.87740163998045,4.0725
 ```
 
 PROJ 4.9.1 (in Ubuntu wily) gebruikt deze waardes ook.
@@ -75,7 +75,7 @@ PROJ 4.8.0 (in Debian jessie & Ubuntu trusty) gebruikt dezelfde waardes
 als PostGIS 2.1.x met de lagere precisie:
 
 ```
- +towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725
++towgs84=565.417,50.3319,465.552,-0.398957,0.343988,-1.8774,4.0725
 ```
 
 GeoTIFF
@@ -91,33 +91,18 @@ grids (EPSG:7000 & EPSG:7001) [3] in opgenomen.
 
 [3] https://lists.osgeo.org/pipermail/dutch/2015-February/001097.html
 
-csv/coordinate_operation.csv:
+[csv/coordinate_operation.csv](https://trac.osgeo.org/geotiff/browser/tags/libgeotiff-1.4.2/csv/coordinate_operation.csv):
 
 ```
- 7000,Amersfoort to ETRS89 (7),transformation,4289,4258,RDNAP-Nld
-2008,7,1275,"Approximation of horizontal component of official 3D
-RDNAPTRANS(TM) transformation, which since 1st October 2000 has defined
-Amersfoort geodetic datum.",0.001,9615,,,Consistent to within 1mm with
-official RNAPTRANS(TM)2008 at ground level onshore and at MSL offshore.
-The horizontal deviation using this NTv2 grid is approximately 1mm per
-50m height difference from ground level or MSL.,"Kadaster and
-Rijkswaterstaat CIV, working together under the name
-RDNAP.",OGP,2015/02/12,2015.006,1,0
- 7001,ETRS89 to NAP height (1),transformation,4937,5709,RDNAP-Nld
-2008,1,1275,"Derivation of gravity-related heights from GPS
-observations. When used in conjunction with transformation Amersfoort to
-ETRS89 (7) (code 7000), this transformation is
-reversible.",0.01,9665,,,Alternative to vertical component of official
-3D RDNAPTRANS(TM)2008. The naptrans2008 correction grid incorporates the
-NLGEO2004 geoid model plus a fixed offset.,"Kadaster and Rijkswaterstaat
-CIV, working together under the name RDNAP.",OGP,2015/02/12,2015.006,1,0
+7000,Amersfoort to ETRS89 (7),transformation,4289,4258,RDNAP-Nld 2008,7,1275,"Approximation of horizontal component of official 3D RDNAPTRANS(TM) transformation, which since 1st October 2000 has defined Amersfoort geodetic datum.",0.001,9615,,,Consistent to within 1mm with official RNAPTRANS(TM)2008 at ground level onshore and at MSL offshore. The horizontal deviation using this NTv2 grid is approximately 1mm per 50m height difference from ground level or MSL.,"Kadaster and Rijkswaterstaat CIV, working together under the name RDNAP.",OGP,2015/02/12,2015.006,1,0
+7001,ETRS89 to NAP height (1),transformation,4937,5709,RDNAP-Nld 2008,1,1275,"Derivation of gravity-related heights from GPS observations. When used in conjunction with transformation Amersfoort to ETRS89 (7) (code 7000), this transformation is reversible.",0.01,9665,,,Alternative to vertical component of official 3D RDNAPTRANS(TM)2008. The naptrans2008 correction grid incorporates the NLGEO2004 geoid model plus a fixed offset.,"Kadaster and Rijkswaterstaat CIV, working together under the name RDNAP.",OGP,2015/02/12,2015.006,1,0
 ```
 
-csv/coordinate_operation_parameter_value.csv:
+[csv/coordinate_operation_parameter_value.csv](https://trac.osgeo.org/geotiff/browser/tags/libgeotiff-1.4.2/csv/coordinate_operation_parameter_value.csv):
 
 ```
- 7000,9615,8656,,rdtrans2008.gsb,
- 7001,9665,8666,,naptrans2008.gtx,
+7000,9615,8656,,rdtrans2008.gsb,
+7001,9665,8666,,naptrans2008.gtx,
 ```
 
 GeoTIFF 1.4.1 (in Ubuntu wily, xenial & yakkety) gebruikt de EPSG v8.5
