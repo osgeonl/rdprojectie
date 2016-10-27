@@ -27,34 +27,26 @@ configuratie van de proj-rdnap package overgenomen worden
 (/usr/share/proj/rdnap) [4]:
 
 ```
- Name:       RDNAP with NTv2 and VDatum
- Parameters: +proj=sterea +lat_0=52.15616055555555
-+lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000
-+ellps=bessel +nadgrids=rdtrans2008.gsb +geoidgrids=naptrans2008.gtx
-+units=m +no_defs <>
+Name:       RDNAP with NTv2 and VDatum
+Parameters: +proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +nadgrids=rdtrans2008.gsb +geoidgrids=naptrans2008.gtx +units=m +no_defs <>
 ```
 ```
- Name:       RD with NTv2 only
- Parameters: +proj=sterea +lat_0=52.15616055555555
-+lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000
-+ellps=bessel +nadgrids=rdtrans2008.gsb +units=m +no_defs <>
+Name:       RD with NTv2 only
+Parameters: +proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.9999079 +x_0=155000 +y_0=463000 +ellps=bessel +nadgrids=rdtrans2008.gsb +units=m +no_defs <>
 ```
 
 Om de Custom CRS te testen kan bijvoorbeeld Amersfoort gebruikt worden
 welke ook in de tests coordinaten is opgenomen [5]:
 ```
- Geographic / WGS84    Destination CRS
+Geographic / WGS84    Destination CRS
 
- North: 52.155172897   462,999.9999
- East:  5.387203657    155,000,0000
+North: 52.155172897   462,999.9999
+East:  5.387203657    155,000,0000
 ```
 Volgens de test sheet had dit 463000.0000 / 155000.0000 moeten zijn, de
 minimale afwijking bij gebruik van de NTv2 grid shift files is bekend en
 valt binnen de marge van 0.001 meter.
 
-* [3]
-http://docs.qgis.org/2.14/en/docs/user_manual/working_with_projections/working_with_projections.html#sec-custom-projections
-* [4]
-https://anonscm.debian.org/cgit/pkg-grass/proj-rdnap.git/tree/debian/rdnap
-* [5]
-https://anonscm.debian.org/cgit/pkg-grass/proj-rdnap.git/plain/Use%20of%20RDTRANS2008%20and%20NAPTRANS2008.pdf
+* [3] http://docs.qgis.org/2.14/en/docs/user_manual/working_with_projections/working_with_projections.html#sec-custom-projections
+* [4] https://anonscm.debian.org/cgit/pkg-grass/proj-rdnap.git/tree/debian/rdnap
+* [5] https://anonscm.debian.org/cgit/pkg-grass/proj-rdnap.git/plain/Use%20of%20RDTRANS2008%20and%20NAPTRANS2008.pdf
